@@ -12,6 +12,10 @@ if __name__ == "__main__":
       print("Kernelize!", line)
       return line
 
+    # This is the kernel for the distance 
+    # We take the difference between points (distance),
+    # divide by the smoothing factor and kernelize with 
+    # exp(-abs(u)**2) (abs is not needed because of **2)
     def kernelizeDistance(line):
       print(line[3], line[4])
       return exp(-(haversine(float(line[4]), float(line[3]), b, a))**2/h_distance)
